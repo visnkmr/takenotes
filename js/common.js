@@ -16,12 +16,12 @@ $(document).ready(function () {
     });
 
     // count 
-    /*$("textarea").on('input keyup propertychange paste', function () {
+    $("textarea").on('input keyup propertychange paste', function () {
         $("#characterCount").text($(this).val().length); //characters
         countRows(); //rows
         wordCount(); // word counter 
         $("#changeTime").text(getCurrentTime());// set last saved
-    });*/
+    });
 
     $("#fontSize").on('change', function () {
         fontSize = $(this).val();

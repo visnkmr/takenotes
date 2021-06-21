@@ -1,5 +1,7 @@
 _site
-manifest.json
+*.json
 img
 js/background.js
 *.zip
+manifest.json
+manifest.json
