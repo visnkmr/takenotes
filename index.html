@@ -27,8 +27,8 @@
             textarea{
               background-color: black;
             }
-            #padall{
-              margin:20px;
+            .padall{
+              margin:10px;
             }
     </style>
 </head>
@@ -40,7 +40,7 @@
                 <div class="col-sm-12 col-md-3 text">Characters: <span id="characterCount">0</span> </div>
                 <div class="col-sm-12 col-md-3 text">Word Count: <span id="wordCount">0</span> </div>
     </div>
-    <div id="padall" class="col-12 top-buffer row text-center">
+    <div class="padall col-12 top-buffer">
       <div class="btn m-1 disabled text-white btn-transparent" style="opacity:1;">Macros:</div>
       <button class="btn btn-dark m-1" id="startw">Start</button>
       <button class="btn btn-dark m-1" id="stopw">Stop</button>
@@ -48,7 +48,7 @@
       <button class="btn btn-dark m-1" id="time">Time</button>
     </div>
   </div>
-    <div id="textAreaCont" class="form-group col-12 top-buffer fill">
+    <div id="textAreaCont" class="padall form-group top-buffer fill">
         <textarea onchange="settext()" id="textArea" style="background-color:black; color:white;" class="form-control top-buffer text fill" placeholder="Write your notes"></textarea>
       </div>
         <div class="row text-center bottom-buffer">
