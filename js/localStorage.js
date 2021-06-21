@@ -14,6 +14,7 @@ $(document).ready(function () {
     if (textAreaValue) {
         $("textarea").val(textAreaValue);
         $("textarea").attr("placeholder", "");
+        // scrollToBottom();
     }
     // last change data & time
     if (lastChanged) {
@@ -31,18 +32,21 @@ $(document).ready(function () {
         $("#characterCount").text($("textarea").val().length); //characters
         countRows();
     }
-
+// $("textarea").focus();
+scrollToBottom();
 
     
 })
-
-
+function lstxt() {
+    localStorage.setItem(addonName + "_textAreaVal", $("textarea").val());
+        localStorage.setItem(addonName + "_textAreaLastChanged", getCurrentTime());
+}
 $(document).ready(function () {
     // save changes on text area
-    $("textarea").on('keyup propertychange paste', function () {
+    /*$("textarea").on('keyup propertychange paste', function () {
         localStorage.setItem(addonName + "_textAreaVal", $(this).val());
         localStorage.setItem(addonName + "_textAreaLastChanged", getCurrentTime());
-    });
+    });*/
 
     /// SETTINGS ///
 

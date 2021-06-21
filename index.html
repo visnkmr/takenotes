@@ -1,10 +1,11 @@
 ﻿<!DOCTYPE html>
+ <meta content='initial-scale=1.0, width=device-width' name='viewport'>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
 
 
@@ -13,6 +14,7 @@
     <title>Take Notes</title>
     <style>
             .top-buffer { margin-top:20px; }
+            .bottom-buffer { margin-bottom:20px; }
             .fill {
             height: 75%;
             }
@@ -25,21 +27,34 @@
             textarea{
               background-color: black;
             }
+            #padall{
+              margin:20px;
+            }
     </style>
 </head>
 <body>
-    <div id="textAreaCont" class="form-group col-12 top-buffer">
-        <div class="row text-center">
-                <div class="col-sm-12 col-md-3 text">Last Saved: <span id="changeTime">0</span> </div>
+  <div id="topdiv">
+    <div class="form-group col-12 top-buffer row text-center">
+                <!-- <div class="col-sm-12 col-md-3 text">Last Saved: <span id="changeTime">0</span> </div> -->
                 <div class="col-sm-12 col-md-3 text">Lines: <span id="linecount">0</span> </div>
                 <div class="col-sm-12 col-md-3 text">Characters: <span id="characterCount">0</span> </div>
                 <div class="col-sm-12 col-md-3 text">Word Count: <span id="wordCount">0</span> </div>
     </div>
-        <textarea id="textArea" style="background-color:black; color:white;" class="form-control top-buffer text fill" placeholder="Write your notes"></textarea>
-        <div class="row text-center">
+    <div id="padall" class="col-12 top-buffer row text-center">
+      <div class="btn m-1 disabled text-white btn-transparent" style="opacity:1;">Macros:</div>
+      <button class="btn btn-dark m-1" id="startw">Start</button>
+      <button class="btn btn-dark m-1" id="stopw">Stop</button>
+      <button class="btn btn-dark m-1" id="date">Date</button>
+      <button class="btn btn-dark m-1" id="time">Time</button>
+    </div>
+  </div>
+    <div id="textAreaCont" class="form-group col-12 top-buffer fill">
+        <textarea onchange="settext()" id="textArea" style="background-color:black; color:white;" class="form-control top-buffer text fill" placeholder="Write your notes"></textarea>
+      </div>
+        <div class="row text-center bottom-buffer">
                 <!-- <div class="col-sm-12 col-md-4 top-buffer"><strong>Background color </strong><input type="color" id="backgroundColor" value="#000000"/></div>
                 <div class="col-sm-12 col-md-4 top-buffer"><strong>Font color </strong><input type="color" id="fontColor" value="#ffffff" /></div> -->
-                <div class="col-sm-12 col-md-12 top-buffer text">
+                <div id="bottomdiv" class="col-12 text">
                   <strong>Font size </strong>
                   <select class="selectpicker" id="fontSize">
                   <option value="18">18</option>
@@ -51,7 +66,12 @@
                   <option value="30">30</option>
                 </select>
                 </div>
+
+                <div class="col-12 text">
+                  <a href="https://visnkmr.github.io/help">Report Issue</a><br/>
+                  Made by <a href="https://github.com/visnkmr">Vishnu N K</a>.<br/>
+                  Check out more of our apps @<br/><a href="https://play.google.com/store/apps/developer?id=Vishnu+N+K">Google Play</a><br/><a href="http://www.amazon.com/gp/mas/dl/android?p=io.github.visnkmr.kagaz&showAll=1">Amazon Appstore</a><br/><a href="https://t.me/vishnunkmr">Telegram</a>
+                </div>
     </div>
-    </div>   
 </body>
 </html>
