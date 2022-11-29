@@ -1,4 +1,4 @@
-﻿// global vars
+// global vars
 // var textAreaPaddtop = 15;
 // var dataBarHeight = 40;
 var futext="";
@@ -15,8 +15,18 @@ $(document).ready(function () {
         setMainContHeight()
     });
 
+
     // count 
-    $("textarea").on('input keyup propertychange paste', function () {
+    $("textarea").on('input keyup propertychange paste', function (e) {
+        if(e.keyCode === 13 && !e.shiftKey) {
+            // && !e.shiftKey
+//            console.log("enter");
+            
+            // e.preventDefault();
+            settext();
+        
+            // $(this).closest("form").submit();
+        }
         $("#characterCount").text($(this).val().length); //characters
         countRows(); //rows
         wordCount(); // word counter 
@@ -30,6 +40,7 @@ $(document).ready(function () {
     });
 
     $("#startw").click(function(){
+//        console.log("test1");
         futext = $("#textArea").val();
         // $("#textArea").text($(this).text());
         $("#textArea").val(futext+"\n"+gctsw()+"---Start");
