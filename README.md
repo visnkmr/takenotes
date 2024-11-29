@@ -1,4 +1,5 @@
 # Takenotes  
+[![Github All Releases](https://img.shields.io/github/downloads/visnkmr/takenotes/total.svg)]()  
   
   **Report Issues, Bugs, Feature Suggestion in github issues section [here](https://github.com/visnkmr/takenotes/issues)**
 
